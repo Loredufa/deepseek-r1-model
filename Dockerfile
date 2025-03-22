@@ -6,13 +6,10 @@ WORKDIR /app
 
 # Copiar los archivos de la aplicación
 COPY app.py /app/
-COPY requirements.txt /app/
+COPY requirement.txt /app/
 
 # Instalar dependencias
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Crear un volumen para almacenar el modelo
-VOLUME [ "/mnt/model" ]
+RUN pip install --no-cache-dir -r requirement.txt
 
 # Exponer el puerto que usará la aplicación
 EXPOSE 8080
